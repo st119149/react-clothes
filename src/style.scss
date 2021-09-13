@@ -1,0 +1,31 @@
+	
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px;
+    background-color: #fff2e2;
+}
+
+.container {
+    max-width: 1080px;
+}
+
+#root {
+    max-width: 1080px;
+    margin: 50px auto;
+    border-radius: 20px;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+@media(max-width: 1080px) {
+    #root {
+        margin: 0 auto;
+        border-radius: 0;
+    }
+}

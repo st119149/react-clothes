@@ -1,0 +1,135 @@
+.card {
+    justify-self: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 200px;
+    height: 250px;
+    padding: 15px;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 10px;
+    transition: 0.15s ease all;
+    cursor: pointer;
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0px 20px 36px -14px rgba(0, 0, 0, 0.1);
+    }
+
+
+    img {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        height: 120px;
+        object-fit: contain;
+    }
+
+    .title {
+        font-size: 14px;
+    }
+
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .priceTitle {
+            color: rgba(0,0,0,0.5);
+        }
+
+        .price {
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .like {
+            display: block;
+            width: 40px;
+            height: 40px;
+            padding: 5px;
+            margin: 0;
+            opacity: 0.3;
+            cursor: pointer;
+            transition: 0.1s ease all;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+
+@keyframes blink {
+    0% {
+        
+        left: -200px;
+    }
+
+    100% {
+        left: 300px;
+    }
+}
+
+@mixin blinkItem {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) skew(-30deg);
+    width: 100px;
+    height: 300px;
+    background-color: #fff;
+    filter: blur(35px);
+
+    animation: blink 4s ease-in-out infinite;
+
+}
+
+
+.loadingCard {
+    position: relative;
+    justify-self: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 200px;
+    height: 250px;
+    border-radius: 10px;
+    opacity: 0.8;
+    overflow: hidden;
+
+    &::after {
+        @include blinkItem;
+
+    }
+
+}
+
+.loadingImage {
+    width: 200px;
+    height: 130px;
+    background-color: #fff2e2;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.loadingText {
+    width: 200px;
+    height: 40px;
+    background-color: #fff2e2;
+    border-radius: 10px;
+    margin-bottom: 20px;
+
+}
+
+.loadingPrice {
+    width: 200px;
+    height: 40px;
+    background-color: #fff2e2;
+    border-radius: 10px;
+}
